@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/phone-generator/static/css/main.5cd0102c.css",
+    "main.js": "/phone-generator/static/js/main.b345b9ba.js",
+    "static/js/787.d4aba7ab.chunk.js": "/phone-generator/static/js/787.d4aba7ab.chunk.js",
+    "static/media/Poppins-Light.ttf": "/phone-generator/static/media/Poppins-Light.7641a0f76ca9ef6c252c.ttf",
+    "static/media/Poppins-Regular.ttf": "/phone-generator/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Bold.ttf": "/phone-generator/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "index.html": "/phone-generator/index.html",
+    "main.5cd0102c.css.map": "/phone-generator/static/css/main.5cd0102c.css.map",
+    "main.b345b9ba.js.map": "/phone-generator/static/js/main.b345b9ba.js.map",
+    "787.d4aba7ab.chunk.js.map": "/phone-generator/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5cd0102c.css",
+    "static/js/main.b345b9ba.js"
+  ]
+}
