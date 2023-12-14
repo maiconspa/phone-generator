@@ -2,8 +2,8 @@ import { useState } from "react"
 import InputGroup from "../../components/InputGroup/InputGroup"
 import { HomeContainer, InputArea, OptionsArea } from "./Home.styled"
 import Switch from "../../components/Switch/Switch";
-import { generateFile } from "../../utils/downloadFile";
-import { DeleteSweepRounded , AddRounded } from "@mui/icons-material";
+import { downloadFile, getBigString } from "../../utils/downloadFile";
+import { DeleteSweepRounded, AddRounded } from "@mui/icons-material";
 import { phoneData } from "../../types/phoneData";
 
 const mock: phoneData = {
@@ -17,10 +17,23 @@ export function Home() {
   const [switchState, setSwitchState] = useState(false)
 
   const bulkGenerate = () => {
+    let bulkText: string = "";
+    let firstNumber: string = "";
+    let lastNumber: string = "";
+
     inputData.forEach((data) => {
-      if (data.valid)
-        generateFile(data.ddd, data.head);
+      if (data.valid) {
+        if (!firstNumber) {
+          firstNumber = data.ddd + data.head
+        }
+        lastNumber = data.ddd + data.head
+        bulkText += getBigString(data.ddd, data.head) + "\n";
+      }
     })
+
+    const fileName: string = (firstNumber === lastNumber) ? firstNumber : `${firstNumber} -- ${lastNumber}`;
+
+    downloadFile(bulkText, fileName)
   }
 
   return <HomeContainer>
@@ -50,7 +63,7 @@ export function Home() {
           alldata={inputData}
           setData={setInputData}
           index={index} />)}
-    
+
     </InputArea>
 
     {switchState && <button onClick={() => bulkGenerate()}>Gerar todos</button>}
